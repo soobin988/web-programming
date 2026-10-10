@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>프로필 사이트 만들기</title>
+
+    <style>
+        body {
+            background-color : hsl(216, 100%, 92%);
+            display : flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            }
+        
+        h3 {color : rgb(80, 80, 255);}
+        .card {
+            width : 400px;
+            height: auto;
+            background-color: white;
+            text-align: center;
+            border-radius: 15px;
+
+        }
+        .favorite-image {
+            width: 200px;
+            height: 200px;
+            background-image: url("/chiikawa.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 10px auto;
+        }
+        th {
+            background-color: rgb(179, 215, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3>나의 프로필</h3>
+        <hr>
+
+        <p>이름 : <%= name %></p>
+        <p>학번 : <%= id %></p>
+        <p>학과 : <%= major %></p>
+        <p>취미 : <%= hobby %></p>
+        <p>연락처 : <%= mail %></p>
+        <p>좋아하는 것 : <%= favorite %></p>
+    </div>
+    
+    <div class="favorite-image"></div>
+
+    <div class="card">
+        <h3>과목 시간표</h3>
+        
+        <table>
+        <caption> 2학기 B반 </caption>
+        <tr>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+        </tr>
+        <tr>
+            <td>사물인터넷실습</td>
+            <td> </td>
+            <td>클라우드컴퓨팅</td>
+            <td>PCB설계실습</td>
+            <td>리눅스개론</td>
+        </tr>
+        <tr>
+            <td>웹개발실습</td>
+            <td> </td>
+            <td>C/C++프로그래밍</td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        </table>
+        <a href="https://www.inhatc.ac.kr" >인하공업전문대학 홈페이지</a>
+    </div>
+    
+<p>접속 날짜 : <%= new Date().toLocaleDateString('ko-KR', {timeZone: 'Asia/Seoul'}) %></p>
+</body>
+</html>
